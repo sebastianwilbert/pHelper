@@ -419,7 +419,8 @@ def h_molarity_calculation(*args):
             elif ka_val != "" and pkb_val != "" and pkb_val >= ka_val:
                 h_molarity_res = str(eval("10**(-14)/np.sqrt(10**(-14)*(10**(-" + pkb_val + ")/" + ka_val + ")))"))
             elif pkb_val != "" and pka_val != "" and pkb_val >= pka_val:
-                h_molarity_res = str(eval("10**(-14)/np.sqrt(10**(-14))*(10**(-" + pkb_val + ")/10**(-" + pka_val + ")))"))
+                h_molarity_res = str(
+                    eval("10**(-14)/np.sqrt(10**(-14))*(10**(-" + pkb_val + ")/10**(-" + pka_val + ")))"))
             else:
                 h_molarity_res = str("Error")
         finally:
@@ -516,7 +517,8 @@ def oh_molarity_calculation(*args):
             elif kb_val != "" and pka_val != "" and pka_val >= kb_val:
                 oh_molarity_res = str(eval("10**(-14)/np.sqrt(10**(-14)*(10**(-" + pka_val + ")/" + kb_val + ")))"))
             elif pkb_val != "" and pka_val != "" and pka_val >= pkb_val:
-                oh_molarity_res = str(eval("10**(-14)/np.sqrt(10**(-14))*(10**(-" + pka_val + ")/10**(-" + pkb_val + ")))"))
+                oh_molarity_res = str(
+                    eval("10**(-14)/np.sqrt(10**(-14))*(10**(-" + pka_val + ")/10**(-" + pkb_val + ")))"))
             elif pka_val != "" and kb_val != "" and kb_val >= pka_val:
                 oh_molarity_res = str(eval("np.sqrt(10**(-14)*(" + kb_val + "/10**(-" + pka_val + ")))"))
             elif ka_val != "" and pkb_val != "" and pkb_val >= ka_val:
@@ -1146,10 +1148,9 @@ def pkb_variable(*args):
 
 # Window
 root = tk.Tk()
-root.title("pHelp 65.44")
+root.title("pHelper 65.44")
 root.configure(bg="#91D8E4")
 root.resizable(False, False)
-root.eval("tk::PlaceWindow . center")
 # Tutorial
 root.bind('<Shift-H>', lambda e: show_help(e))
 tutorial_label = tk.Label(root, text="Press Shift+H to Show Tutorial", bg="#91D8E4", fg="#808080",
@@ -1158,6 +1159,7 @@ tutorial_label.grid(row=5, column=0, columnspan=2, pady=3)
 # Icon
 icon = ImageTk.PhotoImage(Image.open("pHelper_Icon.png"))
 root.iconphoto(False, icon)
+
 
 def show_help(*args):
     tutorial_window = tk.Toplevel()
