@@ -1155,7 +1155,9 @@ root.bind('<Shift-H>', lambda e: show_help(e))
 tutorial_label = tk.Label(root, text="Press Shift+H to Show Tutorial", bg="#91D8E4", fg="#808080",
                           font=("Trebuchet MS", 10))
 tutorial_label.grid(row=5, column=0, columnspan=2, pady=3)
-
+# Icon
+icon = ImageTk.PhotoImage(Image.open("pHelper_Icon.png"))
+root.iconphoto(False, icon)
 
 def show_help(*args):
     tutorial_window = tk.Toplevel()
