@@ -157,21 +157,21 @@ def ph_calculation(*args):
         try:
             ph_res = str(eval(ph_val))
         except:
-            if kb_val != "" and ka_val != "" and kb_val > ka_val:
+            if kb_val != "" and ka_val != "" and kb_val >= ka_val:
                 ph_res = str(eval("14+np.log10(np.sqrt(10**(-14)*(" + kb_val + "/" + ka_val + ")))"))
-            elif kb_val != "" and ka_val != "" and ka_val > kb_val:
+            elif kb_val != "" and ka_val != "" and ka_val >= kb_val:
                 ph_res = str(eval("-np.log10(np.sqrt(10**(-14)*(" + ka_val + "/" + kb_val + ")))"))
-            elif pkb_val != "" and ka_val != "" and ka_val > pkb_val:
+            elif pkb_val != "" and ka_val != "" and ka_val >= pkb_val:
                 ph_res = str(eval("-np.log10(np.sqrt(10**(-14)*(" + ka_val + "/10**(-" + pkb_val + ")))"))
-            elif kb_val != "" and pka_val != "" and pka_val > kb_val:
+            elif kb_val != "" and pka_val != "" and pka_val >= kb_val:
                 ph_res = str(eval("-np.log10(np.sqrt(10**(-14)*(10**(-" + pka_val + ")/" + kb_val + ")))"))
-            elif pkb_val != "" and pka_val != "" and pka_val > pkb_val:
+            elif pkb_val != "" and pka_val != "" and pka_val >= pkb_val:
                 ph_res = str(eval("-np.log10(np.sqrt(10**(-14))*(10**(-" + pka_val + ")/10**(-" + pkb_val + ")))"))
-            elif pka_val != "" and kb_val != "" and kb_val > pka_val:
+            elif pka_val != "" and kb_val != "" and kb_val >= pka_val:
                 ph_res = str(eval("14+np.log10(np.sqrt(10**(-14)*(" + kb_val + "/10**(-" + pka_val + ")))"))
-            elif ka_val != "" and pkb_val != "" and pkb_val > ka_val:
+            elif ka_val != "" and pkb_val != "" and pkb_val >= ka_val:
                 ph_res = str(eval("14+np.log10(np.sqrt(10**(-14)*(10**(-" + pkb_val + ")/" + ka_val + ")))"))
-            elif pkb_val != "" and pka_val != "" and pkb_val > pka_val:
+            elif pkb_val != "" and pka_val != "" and pkb_val >= pka_val:
                 ph_res = str(eval("14+np.log10(np.sqrt(10**(-14))*(10**(-" + pkb_val + ")/10**(-" + pka_val + ")))"))
             elif ph_val != "":
                 ph_res = str(eval("14-" + poh_val))
@@ -293,21 +293,21 @@ def poh_calculation(*args):
         try:
             poh_res = str(eval(poh_val))
         except:
-            if kb_val != "" and ka_val != "" and kb_val > ka_val:
+            if kb_val != "" and ka_val != "" and kb_val >= ka_val:
                 poh_res = str(eval("-np.log10(np.sqrt(10**(-14)*(" + kb_val + "/" + ka_val + ")))"))
-            elif kb_val != "" and ka_val != "" and ka_val > kb_val:
+            elif kb_val != "" and ka_val != "" and ka_val >= kb_val:
                 poh_res = str(eval("14+np.log10(np.sqrt(10**(-14)*(" + ka_val + "/" + kb_val + ")))"))
-            elif pkb_val != "" and ka_val != "" and ka_val > pkb_val:
+            elif pkb_val != "" and ka_val != "" and ka_val >= pkb_val:
                 poh_res = str(eval("14+np.log10(np.sqrt(10**(-14)*(" + ka_val + "/10**(-" + pkb_val + ")))"))
-            elif kb_val != "" and pka_val != "" and pka_val > kb_val:
+            elif kb_val != "" and pka_val != "" and pka_val >= kb_val:
                 poh_res = str(eval("14+np.log10(np.sqrt(10**(-14)*(10**(-" + pka_val + ")/" + kb_val + ")))"))
-            elif pkb_val != "" and pka_val != "" and pka_val > pkb_val:
+            elif pkb_val != "" and pka_val != "" and pka_val >= pkb_val:
                 poh_res = str(eval("14+np.log10(np.sqrt(10**(-14))*(10**(-" + pka_val + ")/10**(-" + pkb_val + ")))"))
-            elif pka_val != "" and kb_val != "" and kb_val > pka_val:
+            elif pka_val != "" and kb_val != "" and kb_val >= pka_val:
                 poh_res = str(eval("-np.log10(np.sqrt(10**(-14)*(" + kb_val + "/10**(-" + pka_val + ")))"))
-            elif ka_val != "" and pkb_val != "" and pkb_val > ka_val:
+            elif ka_val != "" and pkb_val != "" and pkb_val >= ka_val:
                 poh_res = str(eval("-np.log10(np.sqrt(10**(-14)*(10**(-" + pkb_val + ")/" + ka_val + ")))"))
-            elif pkb_val != "" and pka_val != "" and pkb_val > pka_val:
+            elif pkb_val != "" and pka_val != "" and pkb_val >= pka_val:
                 poh_res = str(eval("-np.log10(np.sqrt(10**(-14))*(10**(-" + pkb_val + ")/10**(-" + pka_val + ")))"))
             elif ph_val != "":
                 poh_res = str(eval("14-" + ph_val))
@@ -404,21 +404,21 @@ def h_molarity_calculation(*args):
         try:
             h_molarity_res = str(eval(h_molarity_val))
         except:
-            if kb_val != "" and ka_val != "" and kb_val > ka_val:
+            if kb_val != "" and ka_val != "" and kb_val >= ka_val:
                 h_molarity_res = str(eval("10**(-14)/np.sqrt(10**(-14)*(" + kb_val + "/" + ka_val + "))"))
-            elif kb_val != "" and ka_val != "" and ka_val > kb_val:
+            elif kb_val != "" and ka_val != "" and ka_val >= kb_val:
                 h_molarity_res = str(eval("np.sqrt(10**(-14)*(" + ka_val + "/" + kb_val + "))"))
-            elif pkb_val != "" and ka_val != "" and ka_val > pkb_val:
+            elif pkb_val != "" and ka_val != "" and ka_val >= pkb_val:
                 h_molarity_res = str(eval("np.sqrt(10**(-14)*(" + ka_val + "/10**(-" + pkb_val + ")))"))
-            elif kb_val != "" and pka_val != "" and pka_val > kb_val:
+            elif kb_val != "" and pka_val != "" and pka_val >= kb_val:
                 h_molarity_res = str(eval("np.sqrt(10**(-14)*(10**(-" + pka_val + ")/" + kb_val + ")))"))
-            elif pkb_val != "" and pka_val != "" and pka_val > pkb_val:
+            elif pkb_val != "" and pka_val != "" and pka_val >= pkb_val:
                 h_molarity_res = str(eval("np.sqrt(10**(-14))*(10**(-" + pka_val + ")/10**(-" + pkb_val + ")))"))
-            elif pka_val != "" and kb_val != "" and kb_val > pka_val:
+            elif pka_val != "" and kb_val != "" and kb_val >= pka_val:
                 h_molarity_res = str(eval("10**(-14)/np.sqrt(10**(-14)*(" + kb_val + "/10**(-" + pka_val + ")))"))
-            elif ka_val != "" and pkb_val != "" and pkb_val > ka_val:
+            elif ka_val != "" and pkb_val != "" and pkb_val >= ka_val:
                 h_molarity_res = str(eval("10**(-14)/np.sqrt(10**(-14)*(10**(-" + pkb_val + ")/" + ka_val + ")))"))
-            elif pkb_val != "" and pka_val != "" and pkb_val > pka_val:
+            elif pkb_val != "" and pka_val != "" and pkb_val >= pka_val:
                 h_molarity_res = str(eval("10**(-14)/np.sqrt(10**(-14))*(10**(-" + pkb_val + ")/10**(-" + pka_val + ")))"))
             else:
                 h_molarity_res = str("Error")
@@ -507,21 +507,21 @@ def oh_molarity_calculation(*args):
         try:
             oh_molarity_res = str(eval(oh_molarity_val))
         except:
-            if kb_val != "" and ka_val != "" and kb_val > ka_val:
+            if kb_val != "" and ka_val != "" and kb_val >= ka_val:
                 oh_molarity_res = str(eval("np.sqrt(10**(-14)*(" + kb_val + "/" + ka_val + "))"))
-            elif kb_val != "" and ka_val != "" and ka_val > kb_val:
+            elif kb_val != "" and ka_val != "" and ka_val >= kb_val:
                 oh_molarity_res = str(eval("10**(-14)/np.sqrt(10**(-14)*(" + ka_val + "/" + kb_val + "))"))
-            elif pkb_val != "" and ka_val != "" and ka_val > pkb_val:
+            elif pkb_val != "" and ka_val != "" and ka_val >= pkb_val:
                 oh_molarity_res = str(eval("10**(-14)/np.sqrt(10**(-14)*(" + ka_val + "/10**(-" + pkb_val + ")))"))
-            elif kb_val != "" and pka_val != "" and pka_val > kb_val:
+            elif kb_val != "" and pka_val != "" and pka_val >= kb_val:
                 oh_molarity_res = str(eval("10**(-14)/np.sqrt(10**(-14)*(10**(-" + pka_val + ")/" + kb_val + ")))"))
-            elif pkb_val != "" and pka_val != "" and pka_val > pkb_val:
+            elif pkb_val != "" and pka_val != "" and pka_val >= pkb_val:
                 oh_molarity_res = str(eval("10**(-14)/np.sqrt(10**(-14))*(10**(-" + pka_val + ")/10**(-" + pkb_val + ")))"))
-            elif pka_val != "" and kb_val != "" and kb_val > pka_val:
+            elif pka_val != "" and kb_val != "" and kb_val >= pka_val:
                 oh_molarity_res = str(eval("np.sqrt(10**(-14)*(" + kb_val + "/10**(-" + pka_val + ")))"))
-            elif ka_val != "" and pkb_val != "" and pkb_val > ka_val:
+            elif ka_val != "" and pkb_val != "" and pkb_val >= ka_val:
                 oh_molarity_res = str(eval("np.sqrt(10**(-14)*(10**(-" + pkb_val + ")/" + ka_val + ")))"))
-            elif pkb_val != "" and pka_val != "" and pkb_val > pka_val:
+            elif pkb_val != "" and pka_val != "" and pkb_val >= pka_val:
                 oh_molarity_res = str(eval("np.sqrt(10**(-14))*(10**(-" + pkb_val + ")/10**(-" + pka_val + ")))"))
             else:
                 oh_molarity_res = str("Error")
