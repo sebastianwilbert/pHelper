@@ -121,6 +121,8 @@ def ph_calculation(*args):
                     ph_res = ph_res.replace("e-0", "*10^(") + ")"
                 elif "e" in ph_res:
                     ph_res = ph_res.replace("e", "*10^(-") + ")"
+                if "--" in ph_res:
+                    ph_res = ph_res.replace("--", "-")
                 ph_dis.config(text="pH = " + ph_res)
                 ph_dis.grid(row=1, column=0, pady=10)
             else:
@@ -149,6 +151,8 @@ def ph_calculation(*args):
                     ph_res = ph_res.replace("e-0", "*10^(") + ")"
                 elif "e" in ph_res:
                     ph_res = ph_res.replace("e", "*10^(-") + ")"
+                if "--" in ph_res:
+                    ph_res = ph_res.replace("--", "-")
                 ph_dis.config(text="pH = " + ph_res)
                 ph_dis.grid(row=1, column=0, pady=10)
             else:
@@ -183,6 +187,8 @@ def ph_calculation(*args):
                     ph_res = ph_res.replace("e-0", "*10^(") + ")"
                 elif "e" in ph_res:
                     ph_res = ph_res.replace("e", "*10^(-") + ")"
+                if "--" in ph_res:
+                    ph_res = ph_res.replace("--", "-")
                 ph_dis.config(text="pH = " + ph_res)
                 ph_dis.grid(row=1, column=0, pady=10)
             else:
@@ -194,14 +200,12 @@ def ph_calculation(*args):
             if pka_val != "" and h_molarity_val != "" and oh_molarity_val != "":
                 ph_res = str(eval(pka_val + "+np.log10(" + h_molarity_val + "/" + oh_molarity_val + ")"))
             elif ka_val != "" and h_molarity_val != "" and oh_molarity_val != "":
-                ph_res = str(eval(
-                    "-np.log10(" + ka_val + ")+np.log10(" + h_molarity_val + "/" + oh_molarity_val + ")"))
+                ph_res = str(eval("-np.log10(" + ka_val + ")+np.log10(" + h_molarity_val + "/" + oh_molarity_val + ")"))
             elif pkb_val != "" and h_molarity_val != "" and oh_molarity_val != "":
-                ph_res = str(
-                    eval("14-" + pkb_val + "+np.log10(" + h_molarity_val + "/" + oh_molarity_val + ")"))
+                ph_res = str(eval("14-" + pkb_val + "+np.log10(" + h_molarity_val + "/" + oh_molarity_val + ")"))
             elif kb_val != "" and h_molarity_val != "" and oh_molarity_val != "":
-                ph_res = str(eval(
-                    "14+np.log10(" + kb_val + ")+np.log10(" + h_molarity_val + "/" + oh_molarity_val + ")"))
+                ph_res = str(
+                    eval("14+np.log10(" + kb_val + ")+np.log10(" + h_molarity_val + "/" + oh_molarity_val + ")"))
             elif poh_val != "":
                 ph_res = str(eval("14-" + poh_val))
             else:
@@ -212,6 +216,8 @@ def ph_calculation(*args):
                     ph_res = ph_res.replace("e-0", "*10^(") + ")"
                 elif "e" in ph_res:
                     ph_res = ph_res.replace("e", "*10^(-") + ")"
+                if "--" in ph_res:
+                    ph_res = ph_res.replace("--", "-")
                 ph_dis.config(text="pH = " + ph_res)
                 ph_dis.grid(row=1, column=0, pady=10)
             else:
@@ -257,6 +263,8 @@ def poh_calculation(*args):
                     poh_res = poh_res.replace("e-0", "*10^(") + ")"
                 elif "e" in poh_res:
                     poh_res = poh_res.replace("e", "*10^(-") + ")"
+                if "--" in poh_res:
+                    poh_res = poh_res.replace("--", "-")
                 poh_dis.config(text="pOH = " + poh_res)
                 poh_dis.grid(row=2, column=0, pady=10)
             else:
@@ -285,6 +293,8 @@ def poh_calculation(*args):
                     poh_res = poh_res.replace("e-0", "*10^(") + ")"
                 elif "e" in poh_res:
                     poh_res = poh_res.replace("e", "*10^(-") + ")"
+                if "--" in poh_res:
+                    poh_res = poh_res.replace("--", "-")
                 poh_dis.config(text="pOH = " + poh_res)
                 poh_dis.grid(row=1, column=0, pady=10)
             else:
@@ -319,6 +329,8 @@ def poh_calculation(*args):
                     poh_res = poh_res.replace("e-0", "*10^(") + ")"
                 elif "e" in poh_res:
                     poh_res = poh_res.replace("e", "*10^(-") + ")"
+                if "--" in poh_res:
+                    poh_res = poh_res.replace("--", "-")
                 poh_dis.config(text="pOH = " + poh_res)
                 poh_dis.grid(row=1, column=0, pady=10)
             else:
@@ -330,14 +342,13 @@ def poh_calculation(*args):
             if pkb_val != "" and h_molarity_val != "" and oh_molarity_val != "":
                 poh_res = str(eval(pkb_val + "+np.log10(" + h_molarity_val + "/" + oh_molarity_val + ")"))
             elif kb_val != "" and h_molarity_val != "" and oh_molarity_val != "":
-                poh_res = str(eval(
-                    "-np.log10(" + kb_val + ")+np.log10(" + h_molarity_val + "/" + oh_molarity_val + ")"))
-            elif pka_val != "" and h_molarity_val != "" and oh_molarity_val != "":
                 poh_res = str(
-                    eval("14-" + pka_val + "+np.log10(" + h_molarity_val + "/" + oh_molarity_val + ")"))
+                    eval("-np.log10(" + kb_val + ")+np.log10(" + h_molarity_val + "/" + oh_molarity_val + ")"))
+            elif pka_val != "" and h_molarity_val != "" and oh_molarity_val != "":
+                poh_res = str(eval("14-" + pka_val + "+np.log10(" + h_molarity_val + "/" + oh_molarity_val + ")"))
             elif ka_val != "" and h_molarity_val != "" and oh_molarity_val != "":
-                poh_res = str(eval(
-                    "14+np.log10(" + ka_val + ")+np.log10(" + h_molarity_val + "/" + oh_molarity_val + ")"))
+                poh_res = str(
+                    eval("14+np.log10(" + ka_val + ")+np.log10(" + h_molarity_val + "/" + oh_molarity_val + ")"))
             elif poh_val != "":
                 poh_res = str(eval("14-" + poh_val))
             else:
@@ -348,6 +359,8 @@ def poh_calculation(*args):
                     poh_res = poh_res.replace("e-0", "*10^(") + ")"
                 elif "e" in poh_res:
                     poh_res = poh_res.replace("e", "*10^(-") + ")"
+                if "--" in poh_res:
+                    poh_res = poh_res.replace("--", "-")
                 poh_dis.config(text="pOH = " + poh_res)
                 poh_dis.grid(row=2, column=0, pady=10)
             else:
@@ -396,6 +409,8 @@ def h_molarity_calculation(*args):
                     h_molarity_res = h_molarity_res.replace("e-0", "*10^(") + ")"
                 elif "e" in h_molarity_res:
                     h_molarity_res = h_molarity_res.replace("e", "*10^(-") + ")"
+                if "--" in h_molarity_res:
+                    h_molarity_res = h_molarity_res.replace("--", "-")
                 h_molarity_dis.config(text="[H+] = " + h_molarity_res)
                 h_molarity_dis.grid(row=3, column=0, pady=10)
             else:
@@ -429,6 +444,8 @@ def h_molarity_calculation(*args):
                     h_molarity_res = h_molarity_res.replace("e-0", "*10^(") + ")"
                 elif "e" in h_molarity_res:
                     h_molarity_res = h_molarity_res.replace("e", "*10^(-") + ")"
+                if "--" in h_molarity_res:
+                    h_molarity_res = h_molarity_res.replace("--", "-")
                 h_molarity_dis.config(text="[H+] = " + h_molarity_res)
                 h_molarity_dis.grid(row=1, column=0, pady=10)
             else:
@@ -448,9 +465,11 @@ def h_molarity_calculation(*args):
         finally:
             if h_molarity_i.get() == 1:
                 if "e-0" in h_molarity_res:
-                    h_molarity_res = h_molarity_res.replace("e-0", "*10^(") + ")"
+                    h_molarity_res = h_molarity_res.replace("e-0", "*10^(-") + ")"
                 elif "e" in h_molarity_res:
                     h_molarity_res = h_molarity_res.replace("e", "*10^(-") + ")"
+                if "--" in h_molarity_res:
+                    h_molarity_res = h_molarity_res.replace("--", "-")
                 h_molarity_dis.config(text="[H+] = " + h_molarity_res)
                 h_molarity_dis.grid(row=3, column=0, pady=10)
             else:
@@ -485,8 +504,7 @@ def oh_molarity_calculation(*args):
             if salt_molarity_val != "" and ka_val != "":
                 oh_molarity_res = str(eval("np.sqrt((10**(-14))*" + salt_molarity_val + "/" + ka_val + ")"))
             elif salt_molarity_val != "" and kb_val != "":
-                oh_molarity_res = str(
-                    eval("10**(-14)/(np.sqrt((10**(-14))*" + salt_molarity_val + "/" + kb_val + "))"))
+                oh_molarity_res = str(eval("10**(-14)/(np.sqrt((10**(-14))*" + salt_molarity_val + "/" + kb_val + "))"))
             elif salt_molarity_val != "" and pka_val != "":
                 oh_molarity_res = str(eval("np.sqrt((10**(-14))*" + salt_molarity_val + "/10**(" + pka_val + "))"))
             elif salt_molarity_val != "" and kb_val != "":
@@ -500,6 +518,8 @@ def oh_molarity_calculation(*args):
                     oh_molarity_res = oh_molarity_res.replace("e-0", "*10^(") + ")"
                 elif "e" in oh_molarity_res:
                     oh_molarity_res = oh_molarity_res.replace("e", "*10^(-") + ")"
+                if "--" in oh_molarity_res:
+                    oh_molarity_res = oh_molarity_res.replace("--", "-")
                 oh_molarity_dis.config(text="[OH-] = " + oh_molarity_res)
                 oh_molarity_dis.grid(row=3, column=0, pady=10)
             else:
@@ -533,6 +553,8 @@ def oh_molarity_calculation(*args):
                     oh_molarity_res = oh_molarity_res.replace("e-0", "*10^(") + ")"
                 elif "e" in oh_molarity_res:
                     oh_molarity_res = oh_molarity_res.replace("e", "*10^(-") + ")"
+                if "--" in oh_molarity_res:
+                    oh_molarity_res = oh_molarity_res.replace("--", "-")
                 oh_molarity_dis.config(text="[OH-] = " + oh_molarity_res)
                 oh_molarity_dis.grid(row=1, column=0, pady=10)
             else:
@@ -555,6 +577,8 @@ def oh_molarity_calculation(*args):
                     oh_molarity_res = oh_molarity_res.replace("e-0", "*10^(") + ")"
                 elif "e" in oh_molarity_res:
                     oh_molarity_res = oh_molarity_res.replace("e", "*10^(-") + ")"
+                if "--" in oh_molarity_res:
+                    oh_molarity_res = oh_molarity_res.replace("--", "-")
                 oh_molarity_dis.config(text="[OH-] = " + oh_molarity_res)
                 oh_molarity_dis.grid(row=4, column=0, pady=10)
             else:
@@ -639,11 +663,9 @@ def ka_calculation(*args):
             elif kb_val != "":
                 ka_res = str(eval("10**(-14)/" + kb_val))
             elif ph_val != "" and h_molarity_val != "" and oh_molarity_val != "":
-                ka_res = str(
-                    eval("10**(np.log10(" + h_molarity_val + "/" + oh_molarity_val + ")-" + ph_val + ")"))
+                ka_res = str(eval("10**(np.log10(" + h_molarity_val + "/" + oh_molarity_val + ")-" + ph_val + ")"))
             elif ph_val != "" and h_molarity_val != "" and oh_molarity_val != "":
-                ka_res = str(
-                    eval("10**(" + poh_val + "-14-np.log10(" + h_molarity_val + "/" + oh_molarity_val + "))"))
+                ka_res = str(eval("10**(" + poh_val + "-14-np.log10(" + h_molarity_val + "/" + oh_molarity_val + "))"))
             else:
                 ka_res = str("Error")
         finally:
@@ -652,6 +674,8 @@ def ka_calculation(*args):
                     ka_res = ka_res.replace("e-0", "*10^(") + ")"
                 elif "e" in ka_res:
                     ka_res = ka_res.replace("e", "*10^(-") + ")"
+                if "--" in ka_res:
+                    ka_res = ka_res.replace("--", "-")
                 ka_dis.config(text="Ka = " + ka_res)
                 ka_dis.grid(row=6, column=0, pady=10)
             else:
@@ -690,11 +714,9 @@ def kb_calculation(*args):
             elif ka_val != "":
                 kb_res = str(eval("10**(-14)/" + ka_val))
             elif poh_val != "" and h_molarity_val != "" and oh_molarity_val != "":
-                kb_res = str(
-                    eval("10**(np.log10(" + oh_molarity_val + "/" + h_molarity_val + ")-" + poh_val + ")"))
+                kb_res = str(eval("10**(np.log10(" + oh_molarity_val + "/" + h_molarity_val + ")-" + poh_val + ")"))
             elif ph_val != "" and h_molarity_val != "" and oh_molarity_val != "":
-                kb_res = str(
-                    eval("10**(" + ph_val + "-14-np.log10(" + oh_molarity_val + "/" + h_molarity_val + "))"))
+                kb_res = str(eval("10**(" + ph_val + "-14-np.log10(" + oh_molarity_val + "/" + h_molarity_val + "))"))
             else:
                 kb_res = str("Error")
         finally:
@@ -703,6 +725,8 @@ def kb_calculation(*args):
                     kb_res = kb_res.replace("e-0", "*10^(") + ")"
                 elif "e" in kb_res:
                     kb_res = kb_res.replace("e", "*10^(-") + ")"
+                if "--" in kb_res:
+                    kb_res = kb_res.replace("--", "-")
                 kb_dis.config(text="Kb = " + kb_res)
                 kb_dis.grid(row=7, column=0, pady=10)
             else:
@@ -743,8 +767,7 @@ def pka_calculation(*args):
             elif ph_val != "" and h_molarity_val != "" and oh_molarity_val != "":
                 pka_res = str(eval(ph_val + "-np.log10(" + h_molarity_val + "/" + oh_molarity_val + ")"))
             elif poh_val != "" and h_molarity_val != "" and oh_molarity_val != "":
-                pka_res = str(
-                    eval("14-" + poh_val + "+np.log(" + h_molarity_val + "/" + oh_molarity_val + ")"))
+                pka_res = str(eval("14-" + poh_val + "+np.log(" + h_molarity_val + "/" + oh_molarity_val + ")"))
             else:
                 pka_res = str("Error")
         finally:
@@ -753,6 +776,8 @@ def pka_calculation(*args):
                     pka_res = pka_res.replace("e-0", "*10^(") + ")"
                 elif "e" in pka_res:
                     pka_res = pka_res.replace("e", "*10^(-") + ")"
+                if "--" in pka_res:
+                    pka_res = pka_res.replace("--", "-")
                 pka_dis.config(text="pKa = " + pka_res)
                 pka_dis.grid(row=8, column=0, pady=10)
             else:
@@ -793,8 +818,7 @@ def pkb_calculation(*args):
             elif poh_val != "" and h_molarity_val != "" and oh_molarity_val != "":
                 pkb_res = str(eval(poh_val + "-np.log10(" + oh_molarity_val + "/" + h_molarity_val + ")"))
             elif ph_val != "" and h_molarity_val != "" and oh_molarity_val != "":
-                pkb_res = str(
-                    eval("14-" + ph_val + "+np.log(" + oh_molarity_val + "/" + h_molarity_val + ")"))
+                pkb_res = str(eval("14-" + ph_val + "+np.log(" + oh_molarity_val + "/" + h_molarity_val + ")"))
             else:
                 pkb_res = str("Error")
         finally:
@@ -803,6 +827,8 @@ def pkb_calculation(*args):
                     pkb_res = pkb_res.replace("e-0", "*10^(") + ")"
                 elif "e" in pkb_res:
                     pkb_res = pkb_res.replace("e", "*10^(-") + ")"
+                if "--" in pkb_res:
+                    pkb_res = pkb_res.replace("--", "-")
                 pkb_dis.config(text="pKb = " + pkb_res)
                 pkb_dis.grid(row=9, column=0, pady=10)
             else:
@@ -1151,20 +1177,26 @@ root = tk.Tk()
 root.title("pHelper 65.44")
 root.configure(bg="#91D8E4")
 root.resizable(False, False)
+style = ttk.Style()
+style.theme_use("default")
+style.configure("TCombobox", fieldbackground="#FFFFFF", background="#FFFFFF", foreground="#000000", borderwidth=0,
+                selectforeground="#000000", selectbackground="None")
+root.option_add('*TCombobox*Listbox.background' % root, "#FFFFFF")
+root.option_add('*TCombobox*Listbox.foreground' % root, "#000000")
 # Tutorial
 root.bind('<Shift-H>', lambda e: show_help(e))
 tutorial_label = tk.Label(root, text="Press Shift+H to Show Tutorial", bg="#91D8E4", fg="#808080",
                           font=("Trebuchet MS", 10))
 tutorial_label.grid(row=5, column=0, columnspan=2, pady=3)
 # Icon
-icon = ImageTk.PhotoImage(Image.open("pHelper_Icon.png"))
+icon = ImageTk.PhotoImage(Image.open("assets/pHelper_Icon.png"))
 root.iconphoto(False, icon)
 
 
 def show_help(*args):
     tutorial_window = tk.Toplevel()
     tutorial_window.title("pHelper How to Use")
-    img = ImageTk.PhotoImage(Image.open("pHelper_Tutorial.png").resize((500, 700)))
+    img = ImageTk.PhotoImage(Image.open("assets/pHelper_Tutorial.png").resize((500, 700)))
     panel = tk.Label(tutorial_window, image=img)
     panel.photo = img
     panel.grid(row=0, column=0)
@@ -1182,6 +1214,7 @@ sol_opt = ["Strong Acid and Base Solution", "Weak Acid Buffer Solution", "Weak B
            "Weak Acid and Base Salt Hydrolysis"]
 sol_type = ttk.Combobox(root, values=sol_opt, width=30, state="readonly", background="#91D8E4",
                         font=("Trebuchet MS", 12))
+sol_type.config(takefocus=0)
 root.option_add("*TCombobox*Listbox.font", ("Trebuchet MS", 10))
 sol_type.grid(row=0, column=0, columnspan=2, padx=10, pady=10, sticky="n")
 sol_type.set("Choose a Solution Type")
@@ -1216,6 +1249,7 @@ variables_opt.add_checkbutton(label="pKa", variable=i_pka, command=pka_variable,
 variables_opt.add_checkbutton(label="Kb", variable=i_kb, command=kb_variable, font=("Trebuchet MS", 12))
 variables_opt.add_checkbutton(label="pKb", variable=i_pkb, command=pkb_variable, font=("Trebuchet MS", 12))
 variables["menu"] = variables_opt
+variables.config(bg="#FFFFFF")
 variables_label = tk.Label(root, text="From :", bg="#91D8E4", fg="#FF0060", font=("Trebuchet MS", 12))
 variables_label.grid(row=1, column=0, pady=10, sticky="e")
 variables_opt.entryconfig("pH", state="disabled")
@@ -1257,6 +1291,7 @@ calculate_opt.add_checkbutton(label="pKa", variable=pka_i, command=pka_calculati
 calculate_opt.add_checkbutton(label="Kb", variable=kb_i, command=kb_calculation, font=("Trebuchet MS", 12))
 calculate_opt.add_checkbutton(label="pKb", variable=pkb_i, command=pkb_calculation, font=("Trebuchet MS", 12))
 calculate["menu"] = calculate_opt
+calculate.config(bg="#FFFFFF")
 calculate_opt.entryconfig("pH", state="disabled")
 calculate_opt.entryconfig("pOH", state="disabled")
 calculate_opt.entryconfig("Concentration of Hydrogen Ions", state="disabled")
